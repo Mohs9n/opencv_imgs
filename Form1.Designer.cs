@@ -42,14 +42,14 @@
             this.greenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.laplacianToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.histogramToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.histogramEqualizationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.smoothingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.gbKernelSize = new System.Windows.Forms.TrackBar();
             this.gbKernilSizeLabel = new System.Windows.Forms.Label();
             this.resetEffectsBTN = new System.Windows.Forms.Button();
-            this.smoothingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showHistBtn = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gbKernelSize)).BeginInit();
@@ -74,20 +74,20 @@
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // effectsToolStripMenuItem
             // 
-            this.effectsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.gausianBlurToolStripMenuItem, this.cannyEdgeToolStripMenuItem, this.colorsToolStripMenuItem, this.laplacianToolStripMenuItem, this.histogramToolStripMenuItem, this.histogramEqualizationToolStripMenuItem, this.smoothingToolStripMenuItem });
+            this.effectsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.gausianBlurToolStripMenuItem, this.cannyEdgeToolStripMenuItem, this.colorsToolStripMenuItem, this.laplacianToolStripMenuItem, this.histogramEqualizationToolStripMenuItem, this.smoothingToolStripMenuItem });
             this.effectsToolStripMenuItem.Name = "effectsToolStripMenuItem";
             this.effectsToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
             this.effectsToolStripMenuItem.Text = "Effects";
@@ -152,19 +152,19 @@
             this.laplacianToolStripMenuItem.Text = "Laplacian";
             this.laplacianToolStripMenuItem.Click += new System.EventHandler(this.laplacianToolStripMenuItem_Click);
             // 
-            // histogramToolStripMenuItem
-            // 
-            this.histogramToolStripMenuItem.Name = "histogramToolStripMenuItem";
-            this.histogramToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
-            this.histogramToolStripMenuItem.Text = "Histogram";
-            this.histogramToolStripMenuItem.Click += new System.EventHandler(this.histogramToolStripMenuItem_Click);
-            // 
             // histogramEqualizationToolStripMenuItem
             // 
             this.histogramEqualizationToolStripMenuItem.Name = "histogramEqualizationToolStripMenuItem";
             this.histogramEqualizationToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
             this.histogramEqualizationToolStripMenuItem.Text = "Histogram Equalization";
             this.histogramEqualizationToolStripMenuItem.Click += new System.EventHandler(this.histogramEqualizationToolStripMenuItem_Click);
+            // 
+            // smoothingToolStripMenuItem
+            // 
+            this.smoothingToolStripMenuItem.Name = "smoothingToolStripMenuItem";
+            this.smoothingToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.smoothingToolStripMenuItem.Text = "Smoothing";
+            this.smoothingToolStripMenuItem.Click += new System.EventHandler(this.smoothingToolStripMenuItem_Click);
             // 
             // pictureBox
             // 
@@ -208,24 +208,28 @@
             // 
             this.resetEffectsBTN.Location = new System.Drawing.Point(963, 407);
             this.resetEffectsBTN.Name = "resetEffectsBTN";
-            this.resetEffectsBTN.Size = new System.Drawing.Size(95, 23);
+            this.resetEffectsBTN.Size = new System.Drawing.Size(100, 23);
             this.resetEffectsBTN.TabIndex = 5;
             this.resetEffectsBTN.Text = "Clear Effects";
             this.resetEffectsBTN.UseVisualStyleBackColor = true;
             this.resetEffectsBTN.Click += new System.EventHandler(this.resetEffectsBTN_Click);
             // 
-            // smoothingToolStripMenuItem
+            // showHistBtn
             // 
-            this.smoothingToolStripMenuItem.Name = "smoothingToolStripMenuItem";
-            this.smoothingToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
-            this.smoothingToolStripMenuItem.Text = "Smoothing";
-            this.smoothingToolStripMenuItem.Click += new System.EventHandler(this.smoothingToolStripMenuItem_Click);
+            this.showHistBtn.Location = new System.Drawing.Point(963, 436);
+            this.showHistBtn.Name = "showHistBtn";
+            this.showHistBtn.Size = new System.Drawing.Size(100, 23);
+            this.showHistBtn.TabIndex = 6;
+            this.showHistBtn.Text = "Show Histogram";
+            this.showHistBtn.UseVisualStyleBackColor = true;
+            this.showHistBtn.Click += new System.EventHandler(this.showHistBtn_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 681);
+            this.Controls.Add(this.showHistBtn);
             this.Controls.Add(this.resetEffectsBTN);
             this.Controls.Add(this.gbKernilSizeLabel);
             this.Controls.Add(this.gbKernelSize);
@@ -243,11 +247,11 @@
             this.PerformLayout();
         }
 
+        private System.Windows.Forms.Button showHistBtn;
+
         private System.Windows.Forms.ToolStripMenuItem smoothingToolStripMenuItem;
 
         private System.Windows.Forms.ToolStripMenuItem histogramEqualizationToolStripMenuItem;
-
-        private System.Windows.Forms.ToolStripMenuItem histogramToolStripMenuItem;
 
         private System.Windows.Forms.Button resetEffectsBTN;
 

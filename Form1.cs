@@ -132,8 +132,18 @@ namespace img
             }
             Ocv.SaveImage(_processedImage);
         }
-        
-        private void histogramToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void histogramEqualizationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ApplyEffect(Ocv.EqualizeHistogram, "Histogram Equalization");
+        }
+
+        private void smoothingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ApplyEffect(image => Ocv.ApplySmoothing(image, gbKernelSize.Value), "Smoothing");
+        }
+
+        private void showHistBtn_Click(object sender, EventArgs e)
         {
             if (_processedImage == null)
             {
@@ -149,16 +159,6 @@ namespace img
             {
                 MessageBox.Show($"Error displaying histogram: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void histogramEqualizationToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ApplyEffect(Ocv.EqualizeHistogram, "Histogram Equalization");
-        }
-
-        private void smoothingToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ApplyEffect(image => Ocv.ApplySmoothing(image, gbKernelSize.Value), "Smoothing");
         }
     }
 }
